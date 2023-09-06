@@ -312,6 +312,7 @@ def change_language(lang_select, description_controller, generate_button):
 
 
 if __name__ == "__main__":
+    parser.add_argument("--pretrained_model_path", type=str, default="models/StableDiffusion/stable-diffusion-v1-5.safetensors"
     demo = ui()
     demo.queue(max_size=20)
     demo.launch()
