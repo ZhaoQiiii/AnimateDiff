@@ -287,6 +287,29 @@ def ui():
         
     return demo
 
+description = """
+This is AnimateDiff Demo
+"""
+
+def change_language(lang_select, description_controller, generate_button):
+    description_cn = """
+这是AnimateDiff Demo
+"""
+    if lang_select == "简体中文":
+        description_controller = description_cn
+        generate_button = '生成'
+    else:
+        description_controller = description
+        generate_button = 'Generate'
+    
+    return description_controller, run_button
+
+    lang_select.change(
+        change_language,
+        inputs=[lang_select, description_controller, run_button], 
+        outputs=[description_controller, run_button]
+    )
+
 
 if __name__ == "__main__":
     demo = ui()
